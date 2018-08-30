@@ -4,9 +4,7 @@ const path = require( "path" );
 const { BundleAnalyzerPlugin } = require( "webpack-bundle-analyzer" );
 const FriendlyErrorsWebpackPlugin = require( "friendly-errors-webpack-plugin" );
 
-const plugins = [
-    new FriendlyErrorsWebpackPlugin(),
-];
+const plugins = [ new FriendlyErrorsWebpackPlugin() ];
 
 if ( !dev ) {
     plugins.push(
@@ -28,10 +26,7 @@ module.exports = {
         lib: [ "react", "react-dom" ],
     },
     resolve: {
-        modules: [
-            path.resolve( "./src" ),
-            "node_modules",
-        ],
+        modules: [ path.resolve( "./src" ), "node_modules" ],
     },
     module: {
         rules: [
@@ -59,4 +54,7 @@ module.exports = {
         },
     },
     plugins,
+    devServer: {
+        historyApiFallback: true,
+    },
 };
