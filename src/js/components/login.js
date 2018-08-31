@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import loginService from "../services/loginService";
+import localStorageHelper from "../helpers/localStorage"
 
 class LoginForm extends Component {
     constructor() {
@@ -14,8 +15,12 @@ class LoginForm extends Component {
 
     handleSubmit( event ) {
         event.preventDefault();
-        loginService.loginService( this.username.value, this.password.value );
-        // this.props.history.push( "/dashboard" );
+        loginService.loginService( this.username.value, this.password.value ).then(res=>{
+            console.log("here", res)
+            localStorageHelper.saveToLocalStorage("token",res.user.token);
+            localStorageHelper.saveToLocalStorage("userId",res.user.userId);
+            this.props.history.push( "/dashboard" );
+        })
     }
     render() {
         return (
