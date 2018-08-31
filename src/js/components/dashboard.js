@@ -1,11 +1,12 @@
 /* eslint-disable */
 import React, { Component } from "react";
 
+import Logout from "./logout";
+
 class Layout extends Component {
     constructor() {
         super();
         this.state = {
-            title: "play-board",
             users: [
                 {
                     username: "Unlimited Warlord",
@@ -43,11 +44,10 @@ class Layout extends Component {
     }
 
     render() {
-        const { title, users } = this.state;
+        const { users } = this.state;
 
         return (
             <div className="Container">
-                <h1>{title}</h1>
                 <div className="Header">Header</div>
                 <div className="Content">
                     {users.map((user, index) => (

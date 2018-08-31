@@ -13,13 +13,12 @@ const loginService = ( username, password ) => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify( body ),
-    } )
-        .then( response => {
-            return response.json().then( res => {
-                localStorageHelper.saveToLocalStorage( "token", res.user.token );
-                localStorageHelper.saveToLocalStorage( "userId", res.user.userId );
-                return res;
-            } );
-        } );
+    } ).then( response =>
+        //eslint-disable-line
+        response.json().then( res => {
+            localStorageHelper.saveToLocalStorage( "token", res.user.token );
+            localStorageHelper.saveToLocalStorage( "userId", res.user.userId );
+            return res;
+        } ) );
 };
 export default loginService;

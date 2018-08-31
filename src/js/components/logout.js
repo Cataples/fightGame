@@ -1,17 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const Logout = props => {
     const logout = () => {
-        console.log( "logging out" );
-        props.history.push( "/login" );
+        props.history.push("/login"); //eslint-disable-line
+        localStorage.removeItem( "token" );
+        localStorage.removeItem( "userId" );
     };
 
     return <button onClick={ logout }>Logout</button>;
-};
-
-Logout.propTypes = {
-    history: PropTypes.object.isRequired, // eslint-disable-line
 };
 
 export default Logout;

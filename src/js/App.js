@@ -13,7 +13,7 @@ const app = document.getElementById( "app" );
 ReactDOM.render(
     <BrowserRouter>
         <div>
-            <Route component={ Logout } />
+            <Route path="/dashboard" component={ Logout } />
             <Switch>
                 <Route exact path="/dashboard" component={ Layout } />
                 <Route exact path="/login" component={ Login } />
