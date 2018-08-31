@@ -13,6 +13,4 @@ const loginService = ( username, password ) => {
         body: JSON.stringify( body ),
     } ).then( response => response.json() );
 };
-export default {
-    loginService,
-};
+export default loginService;

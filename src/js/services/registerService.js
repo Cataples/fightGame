@@ -1,3 +1,5 @@
+import loginService from "./loginService";
+
 const registerRequest = ( username, password, playerName, type ) => {
     fetch( "http://10.255.248.60:3030/users/registration", {
         method: "POST",
@@ -11,8 +13,8 @@ const registerRequest = ( username, password, playerName, type ) => {
             type,
         } ),
     } )
-        .then( response => response.json() )
-        .then( response => console.log( response ) );
+        .then( () => loginService( username, password ) )
+        .catch( err => console.log( err ) );
 };
 
 export default registerRequest;
