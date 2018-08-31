@@ -1,12 +1,15 @@
 /* eslint-disable */
 import React, { Component } from "react";
-
+import attackService from "../services/attackService"
 import Logout from "./logout";
+import Modal from "./modal"
 
 class Layout extends Component {
     constructor() {
         super();
         this.state = {
+            isModalVisible: false,
+            message:undefined,
             users: [
                 {
                     username: "Unlimited Warlord",
@@ -37,17 +40,30 @@ class Layout extends Component {
                 },
             ],
         };
+        this.hideModal = this.hideModal.bind(this)
     }
 
-    attack() {
-        alert("attacked!!!");
+    hideModal() {
+        console.log("in hide modal")
+        this.setState({isModalVisible:false})
+    }
+
+    attack(myUser, attackedId) {
+        attackService(myUser,attackedId).then(res=>{
+            console.log(res)
+            // alert(res.story.you)
+            this.setState( { isModalVisible: true } );
+            this.setState({message:res.story.you})
+        });
     }
 
     render() {
+        console.log(this.state.isModalVisible,"modal visible")
         const { users } = this.state;
-
+        const myUser = localStorage.getItem("userId")
         return (
             <div className="container">
+            { this.state.isModalVisible && <Modal message={this.state.message} onClose={this.hideModal}/>}
                 <div className="content">
                     {users.map((user, index) => (
                         <div className="playerListContainer" key={index}>
@@ -58,7 +74,7 @@ class Layout extends Component {
                             <div className="stats">HP: {user.life}</div>
                             <div className="stats">DMG: {user.attack}</div>
                             <div className="stats">DEF: {user.defence}</div>
-                            <button onClick={this.attack}>Attack</button>
+                            <button onClick={() => this.attack(myUser, user._id)}>Attack</button>
                         </div>
                     ))}{" "}
                 </div>
