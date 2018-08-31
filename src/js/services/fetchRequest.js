@@ -3,7 +3,7 @@ const sendRequest = ( method, headers ) => ( path, body ) =>
         method,
         headers,
         body,
-    } ).then( response => response.json() );
+    } ).then( response => { response.json(); console.log( response ); } );
 
 const sendGetRequest = sendRequest( "GET", { "Content-Type": "application/json" } );
 const sendPostRequest = sendRequest( "POST", { "Content-Type": "application/json" } );
