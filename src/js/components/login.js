@@ -15,10 +15,8 @@ class LoginForm extends Component {
 
     handleSubmit( event ) {
         event.preventDefault();
-        loginService.loginService( this.username.value, this.password.value ).then(res=>{
+        loginService( this.username.value, this.password.value ).then(res=>{
             console.log("here", res)
-            localStorageHelper.saveToLocalStorage("token",res.user.token);
-            localStorageHelper.saveToLocalStorage("userId",res.user.userId);
             this.props.history.push( "/dashboard" );
         })
     }
