@@ -2,16 +2,21 @@ p {
   color: red;
 }
 
-form{
+form {
   padding: 20px;
-  margin-top:150px;
-  display:flex;
+  margin-top: 150px;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border:1px solid rgb(73, 150, 145);
+  border: 1px solid rgb(73, 150, 145);
 }
 
 label {
   padding: 5px;
+}
+
+.profilePic {
+  width: 50px;
+  height: 50px;
 }
