@@ -14,6 +14,7 @@ class Layout extends Component {
                     life: 200,
                     attack: 50,
                     defence: 20,
+                    image: "https://wallpaperbrowse.com/media/images/750795.jpg",
                 },
                 {
                     username: "Infinit Uzurpator",
@@ -22,6 +23,7 @@ class Layout extends Component {
                     life: 180,
                     attack: 57,
                     defence: 10,
+                    image: "https://wallpaperbrowse.com/media/images/750795.jpg",
                 },
                 {
                     username: "Cola DIstrugatoruul",
@@ -30,6 +32,7 @@ class Layout extends Component {
                     life: 20,
                     attack: 19,
                     defence: 20,
+                    image: "https://wallpaperbrowse.com/media/images/750795.jpg",
                 },
             ],
         };
@@ -50,6 +53,7 @@ class Layout extends Component {
                     {users.map((user, index) => (
                         <span key={index} onClick={this.attack}>
                             <p>username: {user.username}</p>
+                            <img src={user.image} className="profilePic" />
                             <p>level: {user.level}</p>
                             <p>exp: {user.experience}</p>
                             <p>HP: {user.life}</p>
