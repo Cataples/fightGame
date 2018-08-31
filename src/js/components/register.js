@@ -15,11 +15,12 @@ class Register extends Component {
     sendData( event ) {
         const { history } = this.props;
         event.preventDefault();
-        console.log( this.username.value, this.password.value );
-        console.log( this.playerName.value );
-        console.log( this.charClass.value );
-
-        registerRequest( "nume", "parola" );
+        registerRequest(
+            this.username.value,
+            this.password.value,
+            this.playerName.value,
+            this.charClass.value,
+        );
 
         history.push( "/dashboard" );
     }
