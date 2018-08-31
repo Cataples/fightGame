@@ -2,7 +2,7 @@ p {
   color: red;
 }
 
-.login-form {
+form {
   padding: 20px;
   margin-top: 150px;
   display: flex;
