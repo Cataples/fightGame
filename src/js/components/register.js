@@ -14,6 +14,7 @@ class Register extends Component {
         const { history } = this.props;
         event.preventDefault();
         console.log( this.username.value, this.password.value );
+        console.log( this.playerName.value );
         console.log( this.charClass.value );
 
         history.push( "/dashboard" );
@@ -38,6 +39,13 @@ class Register extends Component {
                         } }
                     />{" "}
                     Password <br />
+                    <input
+                        placeholder="PlayerName"
+                        ref={ element => {
+                            this.playerName = element;
+                        } }
+                    />{" "}
+                    Player Name <br />
                     <select
                         ref={ element => {
                             this.charClass = element;
