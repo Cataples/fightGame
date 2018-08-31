@@ -47,19 +47,19 @@ class Layout extends Component {
         const { users } = this.state;
 
         return (
-            <div className="Container">
-                <div className="Header">Header</div>
-                <div className="Content">
+            <div className="container">
+                <div className="header">Header</div>
+                <div className="content">
                     {users.map((user, index) => (
-                        <span key={index} onClick={this.attack}>
-                            <p>username: {user.username}</p>
-                            <img src={user.image} className="profilePic" />
-                            <p>level: {user.level}</p>
-                            <p>exp: {user.experience}</p>
-                            <p>HP: {user.life}</p>
-                            <p>DMG: {user.attack}</p>
-                            <p>DEF: {user.defence}</p>
-                        </span>
+                        <div className="playerListContainer" key={index} onClick={this.attack}>
+                            <div className="userName"> username: {user.username}</div>
+                            <div><img src={user.image} className="profilePic" /></div>
+                            <div>level: {user.level}</div>
+                            <div>exp: {user.experience}</div>
+                            <div>HP: {user.life}</div>
+                            <div>DMG: {user.attack}</div>
+                            <div>DEF: {user.defence}</div>
+                        </div>
                     ))}{" "}
                 </div>
             </div>
