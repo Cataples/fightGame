@@ -48,17 +48,17 @@ class Layout extends Component {
 
         return (
             <div className="container">
-                <div className="header">Header</div>
                 <div className="content">
                     {users.map((user, index) => (
-                        <div className="playerListContainer" key={index} onClick={this.attack}>
-                            <div className="userName"> username: {user.username}</div>
+                        <div className="playerListContainer" key={index}>
                             <div><img src={user.image} className="profilePic" /></div>
-                            <div>level: {user.level}</div>
-                            <div>exp: {user.experience}</div>
-                            <div>HP: {user.life}</div>
-                            <div>DMG: {user.attack}</div>
-                            <div>DEF: {user.defence}</div>
+                            <div className="username"> {user.username}</div>
+                            <div className="stats">level: {user.level}</div>
+                            <div className="stats">exp: {user.experience}</div>
+                            <div className="stats">HP: {user.life}</div>
+                            <div className="stats">DMG: {user.attack}</div>
+                            <div className="stats">DEF: {user.defence}</div>
+                            <button onClick={this.attack}>Attack</button>
                         </div>
                     ))}{" "}
                 </div>
