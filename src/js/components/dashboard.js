@@ -1,18 +1,27 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default class Layout extends React.Component {
+class Layout extends Component {
     constructor() {
         super();
         this.state = {
-            title: "It works!",
+            title: "play-board",
+            users: [ "user1", "user2", "user3" ],
         };
     }
 
     render() {
+        const { title, users } = this.state;
+
         return (
-            <div>
-                <h1>{ this.state.title }</h1>
+            <div className="Container">
+                <h1>{title}</h1>
+                <div className="Header">Header</div>
+                <div className="Content">
+                    {users.map( ( user, index ) => <p key={ index }>{user}</p> )}{" "}
+                </div>
             </div>
         );
     }
 }
+
+export default Layout;
