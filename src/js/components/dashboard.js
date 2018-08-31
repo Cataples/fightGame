@@ -51,9 +51,9 @@ class Layout extends Component {
     attack(myUser, attackedId) {
         attackService(myUser,attackedId).then(res=>{
             console.log(res)
-            // alert(res.story.you)
             this.setState( { isModalVisible: true } );
             this.setState({message:res.story.you})
+            this.setState({enemyMessage:res.story.enemy})
         });
     }
 
@@ -63,7 +63,7 @@ class Layout extends Component {
         const myUser = localStorage.getItem("userId")
         return (
             <div className="container">
-            { this.state.isModalVisible && <Modal message={this.state.message} onClose={this.hideModal}/>}
+            { this.state.isModalVisible && <Modal message={this.state.message} enemyMessage={this.state.enemyMessage} onClose={this.hideModal}/>}
                 <div className="content">
                     {users.map((user, index) => (
                         <div className="playerListContainer" key={index}>

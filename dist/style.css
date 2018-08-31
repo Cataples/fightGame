@@ -55,17 +55,26 @@ label {
 
 .myModal {
   position: absolute;
-  background-color: rgba(236, 236, 236, 0.938);
+  background-color: rgba(236, 236, 236, 0.884);
   border: 1px solid rgb(161, 161, 161);
   font-size: 2em;
   width:400px;
   margin-left:-200px;
   left:50%;
 }
+
 .message{
   text-align: center;
   padding: 20px;
+  color:red;
 }
+
+.enemyMessage{
+  text-align: center;
+  padding: 20px;
+  color:green;
+}
+
 
 .icon{
   margin:0 15px;

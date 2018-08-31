@@ -15,6 +15,7 @@ class Modal extends Component {
             <div className="myModal">
             <div className="icon" onClick={this.props.onClose}>x</div>
             <div className="message">{this.props.message}</div>
+            <div className="enemyMessage">{this.props.enemyMessage}</div>
             </div>
         );
     }
