@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import registerRequest from "../services/registerService";
+
 class Register extends Component {
     constructor() {
         super();
@@ -16,6 +18,8 @@ class Register extends Component {
         console.log( this.username.value, this.password.value );
         console.log( this.playerName.value );
         console.log( this.charClass.value );
+
+        registerRequest( "nume", "parola" );
 
         history.push( "/dashboard" );
     }
