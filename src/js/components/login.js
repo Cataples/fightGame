@@ -19,7 +19,7 @@ class LoginForm extends Component {
     }
     render() {
         return (
-            <form onSubmit={ this.handleSubmit } className="login-form">
+            <form onSubmit={ this.handleSubmit } className="form">
                 <label>Username
                     <input type="text" name="username" ref={node => (this.username = node)} />
                 </label>

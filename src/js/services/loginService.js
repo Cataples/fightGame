@@ -1,7 +1,7 @@
 import { sendPostRequest } from "./fetchRequest";
 
 const loginService = ( username, password ) => {
-    const path = "";
+    const path = "10.255.248.60:3030/users/login";
     const body = {
         username,
         password,
